@@ -21,7 +21,7 @@ router.post("/", async (req, res) => {
         });
         res.status(201).json(user);
     } catch(error){
-        res.status(500).json(error);
+        res.status(500).json({message: error.message});
     }
 })
 
@@ -32,15 +32,15 @@ router.get("/find/:id", async(req, res) => {
         const {password, ...others} = user._doc;
         res.status(200).json(others)
     } catch(error){
-        res.status(500).json(error);
+        res.status(500).json({message: error.message});
     }
 })
 
 // GET ALL USERS
 router.get("/", async (req, res) => {
     try {
-        //const users = await prisma.user.findMany();
-        res.status(200).json({message: 'API is working'});
+        const user = await prisma.user.findMany();
+        res.status(200).json(user);
     } catch (error){
         res.status(500).json({message: error.message});
     }
@@ -61,7 +61,7 @@ router.put("/:id", async (req, res) =>{
         })
         res.status(200).json(user);
     } catch(error){
-        res.status(500).json(error);
+        res.status(500).json({message: error.message});
     }
 })
 
@@ -71,10 +71,8 @@ router.delete("/:id", async (req, res) => {
         await prisma.user.findByIdAndDelete(req.params.id);
         res.status(200).json("User has been deleted.");
     } catch(error){
-        res.status(500).json(error)
+        res.status(500).json({message: error.message})
     }
 })
-
-// UPDATE USER
 
 module.exports = router;
