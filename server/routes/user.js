@@ -14,16 +14,17 @@ router.post("/", async (req, res) => {
     try{
         const user = await prisma.user.create({
             data: {
-                username: req.body.name,
+                username: req.body.username,
                 email: req.body.email,
-                password: req.body.password,
-            }
+                password: req.body.password
+            },
         });
         res.status(201).json(user);
     } catch(error){
+        console.log(req)
         res.status(500).json({message: error.message});
     }
-})
+});
 
 // GET USER
 router.get("/find/:id", async(req, res) => {
