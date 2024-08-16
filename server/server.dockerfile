@@ -10,6 +10,8 @@ COPY prisma ./prisma
 
 RUN npx prisma generate
 
+## RUN docker exec -it server npx prisma migrate dev --name init
+
 COPY . .
 
 EXPOSE 4000
