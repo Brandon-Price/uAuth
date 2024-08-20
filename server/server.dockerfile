@@ -17,3 +17,6 @@ COPY . .
 EXPOSE 4000
 
 CMD ["npm", "start"]
+
+COPY ./docker-entrypoint /docker-entrypoint.sh
+ENTRYPOINT ["bash", "docker-entrypoint.sh"]
