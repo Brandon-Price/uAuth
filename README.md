@@ -28,6 +28,7 @@ To run the project currently:
      &nbsp; &nbsp;   - docker compose up -d server<br>
     <br>
     <li>In terminal you need to run: docker exec -it server npx prisma migrate dev --name init</li><br>
+     &nbsp; &nbsp;   - This is done to make the prisma scheme connect to the actual database. Without it you won't be able to use the database.<br><br>
     <li>In client folder run: npm run dev</li>
 </ul>
 
