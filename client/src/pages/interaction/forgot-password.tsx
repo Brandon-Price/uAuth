@@ -8,6 +8,7 @@ export default function ForgotPassword() {
 
     return(
         <main className="flex flex-col items-center justify-center min-h-screen p-4 bg-gray-100">
+            <Link href={"/"}>Dashboard</Link>
             <div className="space-y-4 w-full max-w-2xl items-center">
                 <form className='p-10 bg-gray-100 rounded shadow flex flex-col items-center'>
                     <h1 className="mt-2 mb-4 text-2xl font-bold text-gray-800 text-center">Reset Password</h1>
@@ -32,6 +33,10 @@ export default function ForgotPassword() {
                     <button type='submit' className='w-2/3 p-2 text-white bg-blue-500 rounded hover:bg-blue-600'>
                         Reset Password
                     </button>
+                    <div className='p-2 flex justify-evenly'>
+                        <Link className='p-4' href="./login">Login</Link>
+                        <Link className='p-4' href={"/"}>Dashboard</Link>
+                    </div> 
                 </form>
             </div>
         </main>

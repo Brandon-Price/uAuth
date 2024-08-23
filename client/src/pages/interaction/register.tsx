@@ -32,7 +32,11 @@ export default function Register() {
                 <button type='submit' className='w-2/3 p-2 text-white bg-blue-500 rounded hover:bg-blue-600'>
                     Create Account
                 </button>
-                <Link className='p-4' href="./login">Already have an account?</Link>  
+                <div className='p-2 flex justify-evenly'>
+                    <Link className='p-4' href="./login">Login</Link>
+                    <Link className='p-4' href="./forgot-password">Reset Password?</Link>
+                    <Link className='p-4' href={"/"}>Dashboard</Link>
+                </div>  
             </form>
         </div>
     </main>

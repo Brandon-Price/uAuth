@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import CardComponent from '../components/CardComponent';
+import Link from 'next/link';
 
 interface User {
     id: number;
@@ -77,6 +78,9 @@ export default function Home() {
 
     return (
         <main className="flex flex-col items-center justify-center min-h-screen p-4 bg-gray-100">
+            <div className='text-right space-y-4 w-full'>
+                <Link className='p-4 text-xl' href="interaction/login">Login</Link>
+            </div>
             <div className="space-y-4 w-full max-w-2xl">
                 <h1 className="text-2xl font-bold text-gray-800 text-center">Database Management Testing</h1>
                 {/* Create User */}

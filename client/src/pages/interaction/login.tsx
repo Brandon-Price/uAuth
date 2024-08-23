@@ -35,7 +35,10 @@ export default function Login() {
                     <button type='submit' className='w-2/3 p-2 text-white bg-blue-500 rounded hover:bg-blue-600'>
                         Sign In
                     </button>
-                    <Link className='p-4' href="./register">Don't have an Account?</Link>  
+                    <div className='p-2 flex justify-evenly'>
+                        <Link className='p-4' href="./register">New User?</Link>
+                        <Link className='p-4' href={"/"}>Dashboard</Link>
+                    </div> 
                 </form>
             </div>
         </main>
