@@ -6,10 +6,21 @@ export default function Register() {
   const apiUrl = process.env.NEXT_PUBLIC_API_URL || 'http://localhost:4000/api/';
   const [user, setUser] = useState({ username: '', email: '', password: '' });
 
+    // Create User
+    const createUser = async (e: React.FormEvent<HTMLFormElement>) => {
+        e.preventDefault();
+        try{
+            const res = await axios.post(`${apiUrl}users`, user);
+            console.log(res);
+        } catch(error){
+            console.error('Error creating user:', error);
+        }
+    }
+
   return(
     <main className="flex flex-col items-center justify-center min-h-screen p-4 bg-gray-100">
         <div className="space-y-4 w-full max-w-2xl items-center">
-            <form className='p-10 bg-gray-100 rounded shadow flex flex-col items-center'>
+            <form onSubmit={createUser} className='p-10 bg-gray-100 rounded shadow flex flex-col items-center'>
                 <h1 className="mt-2 mb-4 text-2xl font-bold text-gray-800 text-center">Create Account</h1>
                 <input 
                     placeholder='Username'

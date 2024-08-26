@@ -42,6 +42,37 @@ router.get("/find/:id", async(req, res) => {
     }
 })
 
+// USER LOGIN
+router.post("/login", async (req, res) => {
+    try{
+        const {username, password} = req.body;
+        const user = await prisma.user.findUnique({ 
+            where: {
+                username: username
+            },
+        });
+
+        if(!user){
+            res.status(401).json("Wrong/Invalid Username");
+            return
+        };
+
+        bcrypt.compare(password, user.password, (error, result) => {
+            if(error){
+                res.status(500).json(error);
+            }
+
+            if(result){
+                res.status(200).json("Successful Login");
+            } else {
+                res.status(401).json("Wrong Password");
+            }
+        })
+    } catch(error){
+        res.status(500).json(error)
+    }
+})
+
 // GET ALL USERS
 router.get("/", async (req, res) => {
     try {

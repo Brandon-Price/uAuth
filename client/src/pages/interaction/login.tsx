@@ -11,14 +11,32 @@ interface User {
     updatedAt: string;
 }
 
+`
+    Since I am not using an actual state I won't be actually allowing a sign in. I have made a sign in before
+    if you are interested to see. Check out my other projects where I use redux for sign in and login.
+
+    I will just be fetching the data and using console for it's success.
+`
+
 export default function Login() {
     const apiUrl = process.env.NEXT_PUBLIC_API_URL || 'http://localhost:4000/api/';
-    const [user, setUser] = useState({ username: '', email: '', password: '' });
+    const [user, setUser] = useState({ username: '', password: '' });
+
+    // User Login
+    const userLogin = async (e: React.FormEvent<HTMLFormElement>) => {
+        e.preventDefault();
+        try{
+            const res = await axios.post(`${apiUrl}users/login`, user);
+            console.log(res);
+        } catch(error){
+            console.error('Error Logging In:', error);
+        }
+    }
 
     return(
         <main className="flex flex-col items-center justify-center min-h-screen p-4 bg-gray-100">
             <div className="space-y-4 w-full max-w-2xl items-center">
-                <form className='p-10 bg-gray-100 rounded shadow flex flex-col items-center'>
+                <form onSubmit={userLogin} className='p-10 bg-gray-100 rounded shadow flex flex-col items-center'>
                     <h1 className="mt-2 mb-4 text-2xl font-bold text-gray-800 text-center">User Login</h1>
                     <input
                         placeholder='Username'

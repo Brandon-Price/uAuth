@@ -4,11 +4,24 @@ import Link from 'next/link';
 
 export default function ForgotPassword() {
     const apiUrl = process.env.NEXT_PUBLIC_API_URL || 'http://localhost:4000/api/';
-    const [user, setUser] = useState({ username: '', email: '', password: '' });
+    const [user, setUser] = useState({ id: '', username: '', email: '', password: '' });
+
+    // Update User
+    const handleUpdateUser = async (e: React.FormEvent<HTMLFormElement>) => {
+        e.preventDefault();
+        try {
+            await axios.put(`${apiUrl}users/${user}`, {
+                username: user.username,
+                email: user.email,
+                password: user.password
+            })
+        } catch(error){
+            console.error('Error could not update user:', error);
+        }
+    }
 
     return(
         <main className="flex flex-col items-center justify-center min-h-screen p-4 bg-gray-100">
-            <Link href={"/"}>Dashboard</Link>
             <div className="space-y-4 w-full max-w-2xl items-center">
                 <form className='p-10 bg-gray-100 rounded shadow flex flex-col items-center'>
                     <h1 className="mt-2 mb-4 text-2xl font-bold text-gray-800 text-center">Reset Password</h1>
