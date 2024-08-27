@@ -44,11 +44,11 @@ export default function ForgotPassword() {
                         className='mb-2 w-2/3 p-2 border border-gray-300 rounded'
                     />
                     <button type='submit' className='w-2/3 p-2 text-white bg-blue-500 rounded hover:bg-blue-600'>
-                        Reset Password
+                        Request Password Reset
                     </button>
                     <div className='p-2 flex justify-evenly'>
-                        <Link className='p-4' href="./login">Login</Link>
-                        <Link className='p-4' href={"/"}>Dashboard</Link>
+                        <Link className='p-4 text-blue-800 underline' href="./login">Login</Link>
+                        <Link className='p-4 text-blue-800 underline' href={"/"}>Dashboard</Link>
                     </div> 
                 </form>
             </div>
