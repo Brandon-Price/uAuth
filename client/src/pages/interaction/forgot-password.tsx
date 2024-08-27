@@ -47,8 +47,8 @@ export default function ForgotPassword() {
                         Request Password Reset
                     </button>
                     <div className='p-2 flex justify-evenly'>
-                        <Link className='p-4 text-blue-800 underline' href="./login">Login</Link>
-                        <Link className='p-4 text-blue-800 underline' href={"/"}>Dashboard</Link>
+                        <Link className='p-4 text-blue-800 underline hover:text-blue-600' href="./login">Login</Link>
+                        <Link className='p-4 text-blue-800 underline hover:text-blue-600' href={"/"}>Dashboard</Link>
                     </div> 
                 </form>
             </div>

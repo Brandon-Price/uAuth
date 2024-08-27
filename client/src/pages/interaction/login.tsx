@@ -38,7 +38,7 @@ export default function Login() {
             <div className="space-y-4 w-full max-w-2xl items-center">
                 <form onSubmit={userLogin} className='p-10 bg-gray-100 rounded shadow flex flex-col items-center'>
                     <h1 className="mt-2 mb-4 text-2xl font-bold text-gray-800 text-center">Sign In</h1>
-                    <h3 className="mt-2 mb-4 underline text-blue-800 text-center"><Link className='p-4' href="./register">or Create an Account</Link></h3>
+                    <h3 className="mt-2 mb-4 underline text-blue-800 text-center hover:text-blue-600"><Link className='p-4' href="./register">or Create an Account</Link></h3>
                     <input
                         placeholder='Username'
                         value={user.username}
@@ -55,8 +55,8 @@ export default function Login() {
                         Sign In
                     </button>
                     <div className='p-2 flex justify-evenly'>
-                        <Link className='p-4 underline text-blue-800' href={"/"}>App Dashboard</Link>
-                        <Link className='p-4 underline text-blue-800' href="./forgot-password">Forgot Password?</Link>
+                        <Link className='p-4 underline text-blue-800 hover:text-blue-600' href={"/"}>App Dashboard</Link>
+                        <Link className='p-4 underline text-blue-800 hover:text-blue-600' href="./forgot-password">Forgot Password?</Link>
                     </div> 
                 </form>
             </div>
