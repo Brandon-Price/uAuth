@@ -79,7 +79,7 @@ export default function Home() {
     return (
         <main className="flex flex-col items-center justify-center min-h-screen p-4 bg-gray-100">
             <div className='text-right space-y-4 w-full'>
-                <Link className='p-4 text-xl' href="interaction/login">Login</Link>
+                <Link className='p-4 text-xl bg-blue-300 rounded-xl hover:bg-blue-500' href="interaction/login">Login</Link>
             </div>
             <div className="space-y-4 w-full max-w-2xl">
                 <h1 className="text-2xl font-bold text-gray-800 text-center">Database Management Testing</h1>
