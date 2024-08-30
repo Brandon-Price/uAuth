@@ -84,7 +84,7 @@ export default function Home() {
             <div className="space-y-4 w-full max-w-2xl">
                 <h1 className="text-2xl font-bold text-gray-800 text-center">Database Management Testing</h1>
                 {/* Create User */}
-                <form onSubmit={createUser} className='p-4 bg-blue-100 rounded shadow'>
+                <form onSubmit={createUser} className='p-4 bg-blue-100 rounded shadow flex flex-col items-center'>
                     <h2 className='w-full text-center p-2 text-lg'>This is to test adding users to backend.</h2>
                     <input 
                         placeholder='Username'
@@ -104,12 +104,12 @@ export default function Home() {
                         onChange={(e) => setNewUser({...newUser, password: e.target.value})}
                         className='mb-2 w-full p-2 border border-gray-300 rounded'
                     />
-                    <button type='submit' className='w-full p-2 text-white bg-blue-500 rounded hover:bg-blue-600'>
+                    <button type='submit' className='w-2/3 p-2 text-white bg-blue-500 rounded hover:bg-blue-600'>
                         Create User
                     </button>        
                 </form>
                 {/* Update user */}
-                <form onSubmit={handleUpdateUser} className="p-4 bg-green-100 rounded shadow">
+                <form onSubmit={handleUpdateUser} className="p-4 bg-blue-100 rounded shadow flex flex-col items-center">
                     <h2 className='w-full text-center p-2 text-lg'>This is to test update route on backend.</h2>
                     <input
                         placeholder="User ID"
@@ -135,7 +135,7 @@ export default function Home() {
                         onChange={(e) => setUpdateUser({ ...updateUser, password: e.target.value })}
                         className="mb-2 w-full p-2 border border-gray-300 rounded"
                     />
-                    <button type="submit" className="w-full p-2 text-white bg-green-500 rounded hover:bg-green-600">
+                    <button type="submit" className="w-2/3 p-2 text-white bg-blue-500 rounded hover:bg-blue-600">
                         Update User
                     </button>
                 </form>
@@ -143,7 +143,7 @@ export default function Home() {
                 <div className="space-y-2">
                 <h2 className='w-full text-center p-2 text-lg'>This shows users, and tests if you can delete them</h2>
                     {users.map((user) => (
-                        <div key={user.id} className="flex items-center justify-between bg-white p-4 rounded-lg shadow">
+                        <div key={user.id} className="flex flex-col flex-wrap items-center justify-between bg-white p-4 rounded-lg shadow">
                         <CardComponent card={user} />
                         <button onClick={() => deleteUser(user.id)} className="bg-red-500 hover:bg-red-600 text-white py-2 px-4 rounded">
                             Delete User
