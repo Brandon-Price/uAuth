@@ -7,12 +7,11 @@ Project will use Typescript and NextJS, Postgres, Express and Nodejs for the dat
     &nbsp; &nbsp; &nbsp; &nbsp; **Client Folder**: Typescript, Nextjs, TailwindCSS, Prisma<br>
     &nbsp; &nbsp; &nbsp; &nbsp; **Server Folder**: Nodejs, Express, Unsure of Auth Tech, Docker, Postgres<br>
 
-### Current Goals and Progress
+### Incomplete Items
 __________________________________________________________
 
-- The backend should be complete, might add more things to it if I want more functionality.
-- Frontend I need to make a new page for the actual login and sign up.
-    - The goal of the frontend now is to learn more tailwind and creating a one page solution.
+- I wanted to use a email verification code system, but they cost money and I can't justify paying for it for it just being practice.
+- I could implement JWT verification, but I think that right now the main point was to show that I could set it up and do a small full stack verification process with docker.
 
 ### Prerequisites
 __________________________________________________________
